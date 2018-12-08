@@ -7,12 +7,12 @@ public class DateParser {
     * EXAMPLE: try? DateParser.relativeTime(from:NSDate(),to:today.offsetByDays(-3))//Output: [(3,"d")] // "\(String(relativeTime.value) + relativeTime.type.rawValue.full)" 3day
     */
    public static func relativeTime(from:Date,to:Date)  -> [(value:Int,type:DateType)]{
-      let yearsAgo:Int = numOfYears(from, to)
-      let monthsAgo:Int = numOfMonths(from, to)
-      let daysAgo:Int = numOfDays(from, to)
-      let hoursAgo:Int = numOfHours(from,to)
-      let minutesAgo:Int = numOfMinutes(from, to)
-      let secondsAgo:Int = numOfSeconds(from, to)
+      let yearsAgo:Int = numOfYears(from, to:to)
+      let monthsAgo:Int = numOfMonths(from, to:to)
+      let daysAgo:Int = numOfDays(from, to:to)
+      let hoursAgo:Int = numOfHours(from,to:to)
+      let minutesAgo:Int = numOfMinutes(from, to:to)
+      let secondsAgo:Int = numOfSeconds(from, to:to)
       let weeksAgo:Int = {
          return daysAgo >= 7 ? daysAgo / 7 : 0
       }()
@@ -41,7 +41,7 @@ public class DateParser {
     * IMPORTANT: ⚠️️⚠️️⚠️️ if you pass 0 in any of the arguments the returned date is all wrong, use nil and make sure your var is not 0
     * TODO: ⚠️️ should throw
     */
-   public static func createDate(_ year:Int? = nil,_ month:Int? = nil,_ day:Int? = nil,_ hour:Int? = nil,_ minute:Int? = nil,_ second:Int? = nil)->Date?{
+   public static func createDate(_ year:Int? = nil, month:Int? = nil, day:Int? = nil, hour:Int? = nil, minute:Int? = nil, second:Int? = nil) -> Date?{
       if year == 0 || month == 0 || day == 0 {//this may not apply to hour,min,sec so these arent tested
          fatalError("can't be 0")
       }
@@ -124,32 +124,32 @@ public class DateParser {
    /**
     * Seconds
     */
-   public static func numOfSeconds(_ from:Date,_ to:Date) -> Int{
+   public static func numOfSeconds(_ from:Date, to:Date) -> Int{
       let num:Int? = Calendar.current.dateComponents([.second], from: from, to: to).second
       return num ?? 0
    }
    /**
     * Minutes
     */
-   public static func numOfMinutes(_ from:Date,_ to:Date) -> Int{
+   public static func numOfMinutes(_ from:Date, to:Date) -> Int{
       let num:Int? = Calendar.current.dateComponents([.minute], from: from, to: to).minute
       return num ?? 0
    }
    /**
     * Hours
     */
-   public static func numOfHours(_ from:Date,_ to:Date) -> Int{
+   public static func numOfHours(_ from:Date, to:Date) -> Int{
       let num:Int? = Calendar.current.dateComponents([.hour], from: from, to: to).hour
       return num ?? 0
    }
-   public static func numOfDays(_ from:Date,_ to:Date) -> Int{
+   public static func numOfDays(_ from:Date, to:Date) -> Int{
       let num:Int? = Calendar.current.dateComponents([.day], from: from, to: to).day
       return num ?? 0
    }
    /**
     * Returns number of months between two dates
     */
-   public static func numOfMonths(_ from:Date,_ to:Date) -> Int{
+   public static func numOfMonths(_ from:Date, to:Date) -> Int{
       let num:Int? = Calendar.current.dateComponents([.month], from: from, to: to).month
       return num ?? 0
    }
@@ -159,7 +159,7 @@ public class DateParser {
     * let until:Date = from.offsetByMonths(25)
     * from.numOfYears(until)//2
     */
-   public static func numOfYears(_ from:Date,_ to:Date) -> Int{
+   public static func numOfYears(_ from:Date, to:Date) -> Int{
       let num:Int? = Calendar.current.dateComponents([.year], from: from, to: to).year
       return num ?? 0
    }
@@ -228,7 +228,7 @@ fileprivate class StringParser {
     * substr("Hello from Paris, Texas!!!",11,15); // output: Paris, Texas!!!
     * NOTE: ref: https://stackoverflow.com/a/39677704/5389500
     */
-   static func subStr(_ str:String, _ beginning:Int,_ len:Int)->String{
+   static func subStr(_ str:String,  _ beginning:Int,_ len:Int)->String{
       //str.stringRange(str, beginning, len:len)
       let start = str.index(str.startIndex, offsetBy: beginning)
       let end = str.index(str.startIndex, offsetBy: beginning+len)
@@ -242,3 +242,4 @@ fileprivate extension String {
       return StringParser.subStr(self, i, len)
    }
 }
+
