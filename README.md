@@ -7,4 +7,4 @@ Date 🔸 sugar
 `let date = Date(); sleep(3); date.secsSinceStart//3.0`
 
 ### How do i get it:
-- Download or fork it
+- Carthage: `github "eonist/DateSugar" "master"` 
