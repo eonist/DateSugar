@@ -1,12 +1,12 @@
 import Foundation
 
-class DateParser {
+public class DateParser {
    /**
     * Returns relative time like: 2y, 11m, 3w, 4h, 2d, 5m,  3sec (aka: time ago)
     * NOTE: the approche bellow is Naive. There are more elegant ways of doing this. But this offers more customization in the future (It has been upgraded, may need additional testing)
     * EXAMPLE: try? DateParser.relativeTime(from:NSDate(),to:today.offsetByDays(-3))//Output: [(3,"d")] // "\(String(relativeTime.value) + relativeTime.type.rawValue.full)" 3day
     */
-   static func relativeTime(from:Date,to:Date)  -> [(value:Int,type:DateType)]{
+   public static func relativeTime(from:Date,to:Date)  -> [(value:Int,type:DateType)]{
       let yearsAgo:Int = numOfYears(from, to)
       let monthsAgo:Int = numOfMonths(from, to)
       let daysAgo:Int = numOfDays(from, to)
@@ -30,7 +30,7 @@ class DateParser {
     * TRIVIA: The name descendingDate is a name that describes what the format does. It is not the official name (alt: chronologically descending)
     * NOTE: the reverse is: let formatter = DateFormatter();formatter.dateFormat = "yyyyMMddhhmmss";let dateStr:String =  sortedSections[section];let date = formatter.date(from: dateStr)
     */
-   static func descendingDate(_ date:Date) -> String{
+   public static func descendingDate(_ date:Date) -> String{
       let formatter:DateFormatter = DateFormatter()
       formatter.dateFormat = "yyyyMMddHHmmss"
       let dateStr:String = formatter.string(from: date)
@@ -41,7 +41,7 @@ class DateParser {
     * IMPORTANT: ⚠️️⚠️️⚠️️ if you pass 0 in any of the arguments the returned date is all wrong, use nil and make sure your var is not 0
     * TODO: ⚠️️ should throw
     */
-   static func createDate(_ year:Int? = nil,_ month:Int? = nil,_ day:Int? = nil,_ hour:Int? = nil,_ minute:Int? = nil,_ second:Int? = nil)->Date?{
+   public static func createDate(_ year:Int? = nil,_ month:Int? = nil,_ day:Int? = nil,_ hour:Int? = nil,_ minute:Int? = nil,_ second:Int? = nil)->Date?{
       if year == 0 || month == 0 || day == 0 {//this may not apply to hour,min,sec so these arent tested
          fatalError("can't be 0")
       }
@@ -61,7 +61,7 @@ class DateParser {
     * EXAMPLE: NSDate().shortDate// outputs: 08/12/2016
     * TODO: ⚠️️ move into DateParser
     */
-   static func shortDate(_ date:Date) -> String{//TODO: move the content bellow into DateParser
+   public static func shortDate(_ date:Date) -> String{//TODO: move the content bellow into DateParser
       let dateFormatter = DateFormatter()
       dateFormatter.locale = NSLocale.current
       dateFormatter.dateStyle = .short//swift 3 -> was: dateFormatter.style.short
@@ -71,13 +71,13 @@ class DateParser {
    /**
     * TODO: This can be done with a formater. Replace it with this in the future
     */
-   static func simpleDate(_ date:Date) -> String{
+   public static func simpleDate(_ date:Date) -> String{
       let year:String = String(date.year)
       let month:String = String(date.month)
       let day:String = String(date.day)
       return "\(year)/\(month)/\(day)"
    }
-   static func monthName(_ date:Date) -> String? {
+   public static func monthName(_ date:Date) -> String? {
       let dateFormatter = DateFormatter()
       dateFormatter.dateFormat = "MMMM"
       return dateFormatter.string(from: date)
@@ -85,7 +85,7 @@ class DateParser {
    /**
     * Returns m,t,w,t,f,s,s for date
     */
-   static func shortDayName(_ date:Date)->String{
+   public static func shortDayName(_ date:Date)->String{
       if let dayName = date.dayName, let first = String(dayName).first {
          return String(first)
       } else { return "" }//TODO: ⚠️️ return nil instead?
@@ -93,7 +93,7 @@ class DateParser {
    /**
     * Returns Mon,Tue,Wed
     */
-   static func semiShortDayName(_ date:Date)->String?{
+   public static func semiShortDayName(_ date:Date)->String?{
       if let dayName:String = date.dayName{
          let str:String = StringParser.subStr(dayName, 0, 3)
          return str
@@ -104,10 +104,10 @@ class DateParser {
    /**
     * Jan,Feb,Mar etc
     */
-   static func shortMonthName(_ date:Date)->String{
+   public static func shortMonthName(_ date:Date)->String{
       return date.monthName != nil ? String(date.monthName!.subStr(0, 3)) : ""
    }
-   static func dayName(_ date:Date) -> String? {
+   public static func dayName(_ date:Date) -> String? {
       let dateFormatter = DateFormatter()
       dateFormatter.dateFormat = "EEEE"
       return dateFormatter.string(from: date)
@@ -115,7 +115,7 @@ class DateParser {
    /**
     * NOTE: there is also days.location,days.length,range(of: NSCalendar.Unit.day, in: NSCalendar.Unit.month, for: self)
     */
-   static func numOfDaysInMonth(_ date:Date)->Int?{
+   public static func numOfDaysInMonth(_ date:Date)->Int?{
       let cal = Calendar.current
       guard let days = cal.range(of: .day, in: .month, for: date) else {return nil}
       let length:Int = days.upperBound - days.lowerBound
@@ -124,32 +124,32 @@ class DateParser {
    /**
     * Seconds
     */
-   static func numOfSeconds(_ from:Date,_ to:Date) -> Int{
+   public static func numOfSeconds(_ from:Date,_ to:Date) -> Int{
       let num:Int? = Calendar.current.dateComponents([.second], from: from, to: to).second
       return num ?? 0
    }
    /**
     * Minutes
     */
-   static func numOfMinutes(_ from:Date,_ to:Date) -> Int{
+   public static func numOfMinutes(_ from:Date,_ to:Date) -> Int{
       let num:Int? = Calendar.current.dateComponents([.minute], from: from, to: to).minute
       return num ?? 0
    }
    /**
     * Hours
     */
-   static func numOfHours(_ from:Date,_ to:Date) -> Int{
+   public static func numOfHours(_ from:Date,_ to:Date) -> Int{
       let num:Int? = Calendar.current.dateComponents([.hour], from: from, to: to).hour
       return num ?? 0
    }
-   static func numOfDays(_ from:Date,_ to:Date) -> Int{
+   public static func numOfDays(_ from:Date,_ to:Date) -> Int{
       let num:Int? = Calendar.current.dateComponents([.day], from: from, to: to).day
       return num ?? 0
    }
    /**
     * Returns number of months between two dates
     */
-   static func numOfMonths(_ from:Date,_ to:Date) -> Int{
+   public static func numOfMonths(_ from:Date,_ to:Date) -> Int{
       let num:Int? = Calendar.current.dateComponents([.month], from: from, to: to).month
       return num ?? 0
    }
@@ -159,7 +159,7 @@ class DateParser {
     * let until:Date = from.offsetByMonths(25)
     * from.numOfYears(until)//2
     */
-   static func numOfYears(_ from:Date,_ to:Date) -> Int{
+   public static func numOfYears(_ from:Date,_ to:Date) -> Int{
       let num:Int? = Calendar.current.dateComponents([.year], from: from, to: to).year
       return num ?? 0
    }
@@ -169,7 +169,7 @@ class DateParser {
     * Format: 2018-05-01T18:38:43.162Z -> "Y-MM-dd'T'HH:mm:ssZ"
     * Z - indicates that the time value is the time in Greenwich, England, or UTC time.
     */
-   static func date(_ dateStr:String, format:String) -> Date? {
+   public static func date(_ dateStr:String, format:String) -> Date? {
       let formatter = DateFormatter()
       formatter.dateFormat = format
       let date = formatter.date(from:dateStr)
@@ -177,17 +177,17 @@ class DateParser {
    }
 }
 
-extension DateParser {
+public extension DateParser {
    /**
     * Used in the relativeDate method
     */
-   enum DateError : Error {
+   public enum DateError : Error {
       case error(String)
    }
    /**
     * Used in the relativeDate method
     */
-   enum DateType:String{
+   public enum DateType:String{
       case y = "y"
       case M = "M"
       case w = "w"
@@ -216,7 +216,7 @@ extension DateParser {
       /**
        * Minutes, Hours, Seconds etc
        */
-      func rich(value:Int) -> String{
+      public func rich(value:Int) -> String{
          let isPlural:Bool = value > 1
          return isPlural ? self.full + "s" : self.full
       }
