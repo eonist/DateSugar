@@ -8,3 +8,7 @@ Date 🔸 sugar
 
 ### How do i get it:
 - Carthage: `github "eonist/DateSugar" "master"` 
+
+### Todo:
+- add lint
+- add unit tests
