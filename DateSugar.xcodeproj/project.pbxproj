@@ -12,6 +12,16 @@
 		F1D81CDB22D66E81008F842A /* YMD+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81CD622D66E81008F842A /* YMD+Extensions.swift */; };
 		F1D81CDC22D66E81008F842A /* YearMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81CD722D66E81008F842A /* YearMonth.swift */; };
 		F1D81CDD22D66E81008F842A /* YearMonthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81CD822D66E81008F842A /* YearMonthDay.swift */; };
+		F1D81CE822D73ED0008F842A /* DateSugarMacOS.h in Headers */ = {isa = PBXBuildFile; fileRef = F1D81CE622D73ED0008F842A /* DateSugarMacOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1D81CEC22D73EDB008F842A /* YM+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81CD422D66E81008F842A /* YM+Extensions.swift */; };
+		F1D81CED22D73EDB008F842A /* TimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81CD522D66E81008F842A /* TimeParser.swift */; };
+		F1D81CEE22D73EDB008F842A /* YMD+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81CD622D66E81008F842A /* YMD+Extensions.swift */; };
+		F1D81CEF22D73EDB008F842A /* YearMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81CD722D66E81008F842A /* YearMonth.swift */; };
+		F1D81CF022D73EDB008F842A /* YearMonthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81CD822D66E81008F842A /* YearMonthDay.swift */; };
+		F1D81CF122D73EDB008F842A /* DateAsserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7ABEF21BBFEEC004E94EB /* DateAsserter.swift */; };
+		F1D81CF222D73EDB008F842A /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7ABF021BBFEEC004E94EB /* Date+Extension.swift */; };
+		F1D81CF322D73EDB008F842A /* DateModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7ABF821BBFEEC004E94EB /* DateModifier.swift */; };
+		F1D81CF422D73EDB008F842A /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7ABF921BBFEEC004E94EB /* DateParser.swift */; };
 		F1F7ABE821BBFE6A004E94EB /* DateSugar.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F7ABE621BBFE6A004E94EB /* DateSugar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1F7ABFA21BBFEEC004E94EB /* DateAsserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7ABEF21BBFEEC004E94EB /* DateAsserter.swift */; };
 		F1F7ABFB21BBFEEC004E94EB /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7ABF021BBFEEC004E94EB /* Date+Extension.swift */; };
@@ -25,6 +35,9 @@
 		F1D81CD622D66E81008F842A /* YMD+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "YMD+Extensions.swift"; sourceTree = "<group>"; };
 		F1D81CD722D66E81008F842A /* YearMonth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearMonth.swift; sourceTree = "<group>"; };
 		F1D81CD822D66E81008F842A /* YearMonthDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearMonthDay.swift; sourceTree = "<group>"; };
+		F1D81CE422D73ED0008F842A /* DateSugarMacOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DateSugarMacOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1D81CE622D73ED0008F842A /* DateSugarMacOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateSugarMacOS.h; sourceTree = "<group>"; };
+		F1D81CE722D73ED0008F842A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1F7ABE321BBFE6A004E94EB /* DateSugar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DateSugar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1F7ABE621BBFE6A004E94EB /* DateSugar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateSugar.h; sourceTree = "<group>"; };
 		F1F7ABE721BBFE6A004E94EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +48,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F1D81CE122D73ED0008F842A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1F7ABE021BBFE6A004E94EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,10 +85,20 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
+		F1D81CE522D73ED0008F842A /* DateSugarMacOS */ = {
+			isa = PBXGroup;
+			children = (
+				F1D81CE622D73ED0008F842A /* DateSugarMacOS.h */,
+				F1D81CE722D73ED0008F842A /* Info.plist */,
+			);
+			path = DateSugarMacOS;
+			sourceTree = "<group>";
+		};
 		F1F7ABD921BBFE6A004E94EB = {
 			isa = PBXGroup;
 			children = (
 				F1F7ABE521BBFE6A004E94EB /* DateSugar */,
+				F1D81CE522D73ED0008F842A /* DateSugarMacOS */,
 				F1F7ABE421BBFE6A004E94EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				F1F7ABE321BBFE6A004E94EB /* DateSugar.framework */,
+				F1D81CE422D73ED0008F842A /* DateSugarMacOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +137,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		F1D81CDF22D73ED0008F842A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1D81CE822D73ED0008F842A /* DateSugarMacOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1F7ABDE21BBFE6A004E94EB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -117,6 +156,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		F1D81CE322D73ED0008F842A /* DateSugarMacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1D81CE922D73ED0008F842A /* Build configuration list for PBXNativeTarget "DateSugarMacOS" */;
+			buildPhases = (
+				F1D81CDF22D73ED0008F842A /* Headers */,
+				F1D81CE022D73ED0008F842A /* Sources */,
+				F1D81CE122D73ED0008F842A /* Frameworks */,
+				F1D81CE222D73ED0008F842A /* Resources */,
+				F1D81CF522D73EF3008F842A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DateSugarMacOS;
+			productName = DateSugarMacOS;
+			productReference = F1D81CE422D73ED0008F842A /* DateSugarMacOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		F1F7ABE221BBFE6A004E94EB /* DateSugar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1F7ABEB21BBFE6A004E94EB /* Build configuration list for PBXNativeTarget "DateSugar" */;
@@ -145,6 +203,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = FutureLab;
 				TargetAttributes = {
+					F1D81CE322D73ED0008F842A = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					F1F7ABE221BBFE6A004E94EB = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
@@ -165,11 +226,19 @@
 			projectRoot = "";
 			targets = (
 				F1F7ABE221BBFE6A004E94EB /* DateSugar */,
+				F1D81CE322D73ED0008F842A /* DateSugarMacOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F1D81CE222D73ED0008F842A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1F7ABE121BBFE6A004E94EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,9 +266,42 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		F1D81CF522D73EF3008F842A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F1D81CE022D73ED0008F842A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1D81CF122D73EDB008F842A /* DateAsserter.swift in Sources */,
+				F1D81CF022D73EDB008F842A /* YearMonthDay.swift in Sources */,
+				F1D81CF322D73EDB008F842A /* DateModifier.swift in Sources */,
+				F1D81CF422D73EDB008F842A /* DateParser.swift in Sources */,
+				F1D81CEC22D73EDB008F842A /* YM+Extensions.swift in Sources */,
+				F1D81CEF22D73EDB008F842A /* YearMonth.swift in Sources */,
+				F1D81CF222D73EDB008F842A /* Date+Extension.swift in Sources */,
+				F1D81CEE22D73EDB008F842A /* YMD+Extensions.swift in Sources */,
+				F1D81CED22D73EDB008F842A /* TimeParser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1F7ABDF21BBFE6A004E94EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,6 +321,60 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		F1D81CEA22D73ED0008F842A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = DateSugarMacOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.futurelab.DateSugarMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F1D81CEB22D73ED0008F842A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = DateSugarMacOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.futurelab.DateSugarMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		F1F7ABE921BBFE6A004E94EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -392,6 +548,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F1D81CE922D73ED0008F842A /* Build configuration list for PBXNativeTarget "DateSugarMacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1D81CEA22D73ED0008F842A /* Debug */,
+				F1D81CEB22D73ED0008F842A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F1F7ABDD21BBFE6A004E94EB /* Build configuration list for PBXProject "DateSugar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
