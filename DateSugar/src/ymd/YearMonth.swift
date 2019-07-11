@@ -1,4 +1,4 @@
 import Foundation
 
 public typealias YM = YearMonth
-public struct YearMonth { let year: Int, month: Int }
+public struct YearMonth { public let year: Int, month: Int }

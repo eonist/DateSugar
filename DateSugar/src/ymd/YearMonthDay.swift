@@ -5,5 +5,5 @@ import Foundation
  */
 public typealias YMD = YearMonthDay
 public struct YearMonthDay {
-    let year: Int, month: Int, day: Int
+    public let year: Int, month: Int, day: Int
 }
