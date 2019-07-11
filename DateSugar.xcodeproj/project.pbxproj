@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1D81CD922D66E81008F842A /* YM+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81CD422D66E81008F842A /* YM+Extensions.swift */; };
+		F1D81CDA22D66E81008F842A /* TimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81CD522D66E81008F842A /* TimeParser.swift */; };
+		F1D81CDB22D66E81008F842A /* YMD+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81CD622D66E81008F842A /* YMD+Extensions.swift */; };
+		F1D81CDC22D66E81008F842A /* YearMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81CD722D66E81008F842A /* YearMonth.swift */; };
+		F1D81CDD22D66E81008F842A /* YearMonthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81CD822D66E81008F842A /* YearMonthDay.swift */; };
 		F1F7ABE821BBFE6A004E94EB /* DateSugar.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F7ABE621BBFE6A004E94EB /* DateSugar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1F7ABFA21BBFEEC004E94EB /* DateAsserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7ABEF21BBFEEC004E94EB /* DateAsserter.swift */; };
 		F1F7ABFB21BBFEEC004E94EB /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7ABF021BBFEEC004E94EB /* Date+Extension.swift */; };
@@ -15,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F1D81CD422D66E81008F842A /* YM+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "YM+Extensions.swift"; sourceTree = "<group>"; };
+		F1D81CD522D66E81008F842A /* TimeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeParser.swift; sourceTree = "<group>"; };
+		F1D81CD622D66E81008F842A /* YMD+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "YMD+Extensions.swift"; sourceTree = "<group>"; };
+		F1D81CD722D66E81008F842A /* YearMonth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearMonth.swift; sourceTree = "<group>"; };
+		F1D81CD822D66E81008F842A /* YearMonthDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearMonthDay.swift; sourceTree = "<group>"; };
 		F1F7ABE321BBFE6A004E94EB /* DateSugar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DateSugar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1F7ABE621BBFE6A004E94EB /* DateSugar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateSugar.h; sourceTree = "<group>"; };
 		F1F7ABE721BBFE6A004E94EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +45,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F1D81CD222D66E81008F842A /* ymd */ = {
+			isa = PBXGroup;
+			children = (
+				F1D81CD322D66E81008F842A /* utils */,
+				F1D81CD722D66E81008F842A /* YearMonth.swift */,
+				F1D81CD822D66E81008F842A /* YearMonthDay.swift */,
+			);
+			path = ymd;
+			sourceTree = "<group>";
+		};
+		F1D81CD322D66E81008F842A /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				F1D81CD422D66E81008F842A /* YM+Extensions.swift */,
+				F1D81CD522D66E81008F842A /* TimeParser.swift */,
+				F1D81CD622D66E81008F842A /* YMD+Extensions.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		F1F7ABD921BBFE6A004E94EB = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +94,7 @@
 		F1F7ABEE21BBFEEC004E94EB /* src */ = {
 			isa = PBXGroup;
 			children = (
+				F1D81CD222D66E81008F842A /* ymd */,
 				F1F7ABEF21BBFEEC004E94EB /* DateAsserter.swift */,
 				F1F7ABF021BBFEEC004E94EB /* Date+Extension.swift */,
 				F1F7ABF821BBFEEC004E94EB /* DateModifier.swift */,
@@ -94,6 +125,7 @@
 				F1F7ABDF21BBFE6A004E94EB /* Sources */,
 				F1F7ABE021BBFE6A004E94EB /* Frameworks */,
 				F1F7ABE121BBFE6A004E94EB /* Resources */,
+				F1D81CDE22D72AD3008F842A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -115,6 +147,7 @@
 				TargetAttributes = {
 					F1F7ABE221BBFE6A004E94EB = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -124,6 +157,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = F1F7ABD921BBFE6A004E94EB;
 			productRefGroup = F1F7ABE421BBFE6A004E94EB /* Products */;
@@ -145,15 +179,40 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F1D81CDE22D72AD3008F842A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F1F7ABDF21BBFE6A004E94EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F1F7ABFA21BBFEEC004E94EB /* DateAsserter.swift in Sources */,
+				F1D81CDC22D66E81008F842A /* YearMonth.swift in Sources */,
+				F1D81CDA22D66E81008F842A /* TimeParser.swift in Sources */,
 				F1F7AC0121BBFEEC004E94EB /* DateModifier.swift in Sources */,
+				F1D81CDD22D66E81008F842A /* YearMonthDay.swift in Sources */,
 				F1F7AC0221BBFEEC004E94EB /* DateParser.swift in Sources */,
+				F1D81CDB22D66E81008F842A /* YMD+Extensions.swift in Sources */,
 				F1F7ABFB21BBFEEC004E94EB /* Date+Extension.swift in Sources */,
+				F1D81CD922D66E81008F842A /* YM+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +360,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.futurelab.DateSugar;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -325,7 +384,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.futurelab.DateSugar;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
