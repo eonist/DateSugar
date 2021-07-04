@@ -12,3 +12,4 @@ Date 🔸 sugar
 ### Todo:
 - add lint
 - add unit tests
+- add github actions
